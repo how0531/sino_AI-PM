@@ -1,0 +1,3 @@
+# 建置中繼與壞檔
+outputs/*.lock.json
+成品/agent_architecture_diagram.png

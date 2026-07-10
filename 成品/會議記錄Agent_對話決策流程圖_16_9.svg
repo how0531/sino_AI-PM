@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <defs>
+        <!-- 陰影濾鏡 -->
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+        </filter>
+        <!-- 漸層色定義 -->
+        <linearGradient id="grad-header" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C43826" />
+            <stop offset="100%" stop-color="#DAA360" />
+        </linearGradient>
+    </defs>
+
+    <!-- 背景 -->
+    <rect width="1920" height="1080" fill="#172439" rx="20"/>
+
+    <!-- 頂部標題 -->
+    <rect x="0" y="0" width="1920" height="120" fill="#0f1827" rx="20"/>
+    <rect x="60" y="116" width="1800" height="4" fill="url(#grad-header)"/>
+    <text x="960" y="75" font-family="'Noto Sans TC', sans-serif" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="2">會議記錄與自動派單 Agent 決策流程圖</text>
+
+    <!-- 流程圖節點與連線 -->
+    <g transform="translate(60, 160)" font-family="'Noto Sans TC', sans-serif">
+        
+        <!-- 1. 起點 (橢圓，桃紅色) -->
+        <g filter="url(#shadow)">
+            <rect x="30" y="325" width="220" height="90" rx="45" fill="#C43826" stroke="#ffffff" stroke-width="2"/>
+            <text x="140" y="372" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">1. 會議記錄 Agent 觸發</text>
+        </g>
+
+        <!-- 連線 1 -> 2 -->
+        <path d="M 250,370 L 320,370" stroke="#DAA360" stroke-width="3" fill="none"/>
+        <polygon points="325,370 312,364 312,376" fill="#DAA360"/>
+
+        <!-- 2. 系統提示貼上 (矩形，鋼藍色) -->
+        <g filter="url(#shadow)">
+            <rect x="325" y="325" width="220" height="90" rx="10" fill="#25334a" stroke="rgba(171, 188, 207, 0.3)" stroke-width="2"/>
+            <text x="435" y="362" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">2. 系統提示訊息</text>
+            <text x="435" y="388" font-size="13" fill="#ABBCCF" text-anchor="middle">請使用者貼上會議逐字稿</text>
+        </g>
+
+        <!-- 連線 2 -> 3 -->
+        <path d="M 545,370 L 615,370" stroke="#DAA360" stroke-width="3" fill="none"/>
+        <polygon points="620,370 607,364 607,376" fill="#DAA360"/>
+
+        <!-- 3. 使用者貼上 (矩形，鋼藍色) -->
+        <g filter="url(#shadow)">
+            <rect x="620" y="325" width="220" height="90" rx="10" fill="#25334a" stroke="rgba(171, 188, 207, 0.3)" stroke-width="2"/>
+            <text x="730" y="362" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">3. 使用者輸入</text>
+            <text x="730" y="388" font-size="13" fill="#ABBCCF" text-anchor="middle">貼上 Teams 會議逐字稿</text>
+        </g>
+
+        <!-- 連線 3 -> 4 -->
+        <path d="M 840,370 L 910,370" stroke="#DAA360" stroke-width="3" fill="none"/>
+        <polygon points="915,370 902,364 902,376" fill="#DAA360"/>
+
+        <!-- 4. Flow 處理 (矩形，鋼藍色) -->
+        <g filter="url(#shadow)">
+            <rect x="915" y="325" width="220" height="90" rx="10" fill="#25334a" stroke="#DAA360" stroke-width="2"/>
+            <text x="1025" y="362" font-size="16" font-weight="bold" fill="#DAA360" text-anchor="middle">4. 呼叫 Power Automate</text>
+            <text x="1025" y="388" font-size="13" fill="#E4E9F4" text-anchor="middle">透過 GPT 提取 Action Items</text>
+        </g>
+
+        <!-- 連線 4 -> 5 -->
+        <path d="M 1135,370 L 1205,370" stroke="#DAA360" stroke-width="3" fill="none"/>
+        <polygon points="1210,370 1197,364 1197,376" fill="#DAA360"/>
+
+        <!-- 5. 判斷分支 (菱形，橘黃色) -->
+        <g filter="url(#shadow)">
+            <!-- 繪製菱形 -->
+            <polygon points="1320,290 1430,370 1320,450 1210,370" fill="#DAA360" stroke="#ffffff" stroke-width="2"/>
+            <text x="1320" y="365" font-size="14" font-weight="bold" fill="#172439" text-anchor="middle">5. 決策分支</text>
+            <text x="1320" y="385" font-size="13" font-weight="bold" fill="#172439" text-anchor="middle">是否自動開立 Jira?</text>
+        </g>
+
+        <!-- ==================== 分支一：是 (向上再右折) ==================== -->
+        <!-- 連線 5 -> 是 -> 6A -->
+        <path d="M 1320,290 L 1320,135 L 1395,135" stroke="#51cf66" stroke-width="3" fill="none"/>
+        <polygon points="1400,135 1387,129 1387,141" fill="#51cf66"/>
+        <text x="1340" y="230" font-size="14" font-weight="bold" fill="#51cf66">是 (Yes)</text>
+
+        <!-- 6A. 呼叫 Jira (矩形，鋼藍) -->
+        <g filter="url(#shadow)">
+            <rect x="1400" y="90" width="220" height="90" rx="10" fill="#25334a" stroke="#51cf66" stroke-width="2"/>
+            <text x="1510" y="127" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">6. 呼叫 Jira Flow</text>
+            <text x="1510" y="153" font-size="13" fill="#51cf66" text-anchor="middle">自動派單並通知負責人</text>
+        </g>
+
+        <!-- 連線 6A -> 7A -->
+        <path d="M 1620,135 L 1690,135" stroke="#51cf66" stroke-width="3" fill="none"/>
+        <polygon points="1695,135 1682,129 1682,141" fill="#51cf66"/>
+
+        <!-- 7A. 終點 (橢圓，桃紅色) -->
+        <g filter="url(#shadow)">
+            <rect x="1695" y="90" width="110" height="90" rx="45" fill="#C43826" stroke="#ffffff" stroke-width="2"/>
+            <text x="1750" y="142" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">結束</text>
+        </g>
+
+        <!-- ==================== 分支二：否 (向下再右折) ==================== -->
+        <!-- 連線 5 -> 否 -> 6B -->
+        <path d="M 1320,450 L 1320,605 L 1395,605" stroke="#C43826" stroke-width="3" fill="none"/>
+        <polygon points="1400,605 1387,599 1387,611" fill="#C43826"/>
+        <text x="1340" y="520" font-size="14" font-weight="bold" fill="#C43826">否 (No)</text>
+
+        <!-- 6B. 僅記錄 (矩形，鋼藍) -->
+        <g filter="url(#shadow)">
+            <rect x="1400" y="560" width="220" height="90" rx="10" fill="#25334a" stroke="rgba(171, 188, 207, 0.3)" stroke-width="2"/>
+            <text x="1510" y="597" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">6. 僅記錄結論</text>
+            <text x="1510" y="623" font-size="13" fill="#ABBCCF" text-anchor="middle">儲存摘要，暫不開單</text>
+        </g>
+
+        <!-- 連線 6B -> 7B -->
+        <path d="M 1620,605 L 1690,605" stroke="#C43826" stroke-width="3" fill="none"/>
+        <polygon points="1695,605 1682,599 1682,611" fill="#C43826"/>
+
+        <!-- 7B. 終點 (橢圓，桃紅色) -->
+        <g filter="url(#shadow)">
+            <rect x="1695" y="560" width="110" height="90" rx="45" fill="#C43826" stroke="#ffffff" stroke-width="2"/>
+            <text x="1750" y="612" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">結束</text>
+        </g>
+
+    </g>
+</svg>

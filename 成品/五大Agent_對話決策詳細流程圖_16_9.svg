@@ -1,0 +1,425 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <defs>
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+        </filter>
+        <linearGradient id="grad-header" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C43826" />
+            <stop offset="100%" stop-color="#DAA360" />
+        </linearGradient>
+        <linearGradient id="grad-link" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#DAA360" />
+            <stop offset="50%" stop-color="#C43826" />
+            <stop offset="100%" stop-color="#DAA360" />
+        </linearGradient>
+    </defs>
+
+    <!-- 背景 -->
+    <rect width="1920" height="1080" fill="#172439"/>
+
+    <!-- 頂部標題 -->
+    <rect x="0" y="0" width="1920" height="95" fill="#0f1827"/>
+    <rect x="50" y="91" width="1820" height="4" fill="url(#grad-header)"/>
+    <text x="960" y="60" font-family="'Noto Sans TC', sans-serif" font-size="30" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="2">五大 Agent 協同運作與跨 Agent 智慧連動決策流程圖</text>
+
+    <!-- 主體區域 -->
+    <g font-family="'Noto Sans TC', sans-serif">
+
+        <!-- ==================== COLUMN 1: 數據 Agent (x:30, w:356) ==================== -->
+        <g transform="translate(30, 110)">
+            <rect width="356" height="830" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="178" y="32" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">1. 數據 Agent</text>
+            <line x1="15" y1="45" x2="341" y2="45" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="78" y="60" width="200" height="48" rx="24" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="89" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">數據查詢意圖觸發</text>
+
+            <path d="M178,108 L178,138" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,143 174,136 182,136" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="48" y="143" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="168" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">使用者輸入自然語言查詢</text>
+            <text x="178" y="188" font-size="11" fill="#ABBCCF" text-anchor="middle">如「查本季 iOS 次日留存率」</text>
+
+            <path d="M178,201 L178,226" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,231 174,224 182,224" fill="#DAA360"/>
+
+            <!-- S2 -->
+            <rect x="48" y="231" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="256" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">Azure OpenAI 語意解析</text>
+            <text x="178" y="276" font-size="11" fill="#ABBCCF" text-anchor="middle">自然語言轉換為 API / SQL 參數</text>
+
+            <path d="M178,289 L178,314" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,319 174,312 182,312" fill="#DAA360"/>
+
+            <!-- S3 -->
+            <rect x="48" y="319" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="344" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">呼叫神策 / Cube 資料庫 API</text>
+            <text x="178" y="364" font-size="11" fill="#ABBCCF" text-anchor="middle">撈取行為數據與交易資料 JSON</text>
+
+            <path d="M178,377 L178,407" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,412 174,405 182,405" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="178,412 268,462 178,512 88,462" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="458" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">資料回傳成功?</text>
+            <text x="178" y="474" font-size="11" font-weight="bold" fill="#172439" text-anchor="middle">且指標是否異常</text>
+
+            <!-- 是 -->
+            <path d="M178,512 L178,555" stroke="#51cf66" stroke-width="2" fill="none"/>
+            <polygon points="178,560 174,553 182,553" fill="#51cf66"/>
+            <text x="192" y="537" font-size="12" font-weight="bold" fill="#51cf66">是</text>
+
+            <rect x="48" y="560" width="260" height="58" rx="8" fill="#25334a" stroke="#51cf66" stroke-width="1" filter="url(#shadow)"/>
+            <text x="178" y="585" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">生成 Markdown 報表與摘要</text>
+            <text x="178" y="605" font-size="11" fill="#DAA360" text-anchor="middle">回傳繁體中文視覺化結果給使用者</text>
+
+            <!-- 否 -->
+            <path d="M88,462 L30,462 L30,590 L48,590" stroke="#C43826" stroke-width="1.5" fill="none"/>
+            <polygon points="48,590 40,586 40,594" fill="#C43826"/>
+            <text x="50" y="452" font-size="12" font-weight="bold" fill="#C43826">否</text>
+
+            <!-- 連動標示 -->
+            <rect x="48" y="635" width="260" height="48" rx="6" fill="rgba(218,163,96,0.08)" stroke="#DAA360" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="178" y="655" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 A】結果餵入 KPI Agent 比對</text>
+            <text x="178" y="672" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 E】異常指標觸發提案 Agent</text>
+
+            <!-- 終點 -->
+            <path d="M178,683 L178,720" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,725 174,718 182,718" fill="#DAA360"/>
+            <rect x="98" y="725" width="160" height="32" rx="16" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="178" y="746" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">結束對話</text>
+        </g>
+
+        <!-- ==================== COLUMN 2: 時程管理 Agent (x:406, w:356) ==================== -->
+        <g transform="translate(406, 110)">
+            <rect width="356" height="830" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="178" y="32" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">2. 時程管理 Agent</text>
+            <line x1="15" y1="45" x2="341" y2="45" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="78" y="60" width="200" height="48" rx="24" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="82" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">每日 17:00 排程觸發</text>
+            <text x="178" y="98" font-size="11" fill="#FFD6D6" text-anchor="middle">或接收外部 Agent 連動</text>
+
+            <path d="M178,108 L178,138" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,143 174,136 182,136" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="48" y="143" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="168" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">掃描 Planner / Jira 看板</text>
+            <text x="178" y="188" font-size="11" fill="#ABBCCF" text-anchor="middle">檢索所有進行中任務的到期日狀態</text>
+
+            <path d="M178,201 L178,226" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,231 174,224 182,224" fill="#DAA360"/>
+
+            <!-- S2 -->
+            <rect x="48" y="231" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="256" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">篩選逾期與即將到期任務</text>
+            <text x="178" y="276" font-size="11" fill="#ABBCCF" text-anchor="middle">標記「已逾期」與「2 日內到期」</text>
+
+            <path d="M178,289 L178,319" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,324 174,317 182,317" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="178,324 268,374 178,424 88,374" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="370" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">是否有逾期任務?</text>
+            <text x="178" y="386" font-size="11" font-weight="bold" fill="#172439" text-anchor="middle">偵測異常</text>
+
+            <!-- 是 -->
+            <path d="M178,424 L178,460" stroke="#51cf66" stroke-width="2" fill="none"/>
+            <polygon points="178,465 174,458 182,458" fill="#51cf66"/>
+            <text x="192" y="445" font-size="12" font-weight="bold" fill="#51cf66">是</text>
+
+            <rect x="48" y="465" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="490" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">AI 生成委婉催辦訊息</text>
+            <text x="178" y="510" font-size="11" fill="#ABBCCF" text-anchor="middle">語氣體貼且目的明確，附逾期天數</text>
+
+            <path d="M178,523 L178,548" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,553 174,546 182,546" fill="#DAA360"/>
+
+            <!-- S4 -->
+            <rect x="48" y="553" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="578" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">發送 Teams 私訊通知</text>
+            <text x="178" y="598" font-size="11" fill="#ABBCCF" text-anchor="middle">自動推播至負責人工作視窗</text>
+
+            <!-- 否 -->
+            <path d="M268,374 L326,374 L326,690 L178,690 L178,725" stroke="#C43826" stroke-width="1.5" fill="none"/>
+            <polygon points="178,725 174,718 182,718" fill="#C43826"/>
+            <text x="280" y="365" font-size="12" font-weight="bold" fill="#C43826">否</text>
+
+            <!-- 連動標示 -->
+            <rect x="48" y="628" width="260" height="48" rx="6" fill="rgba(218,163,96,0.08)" stroke="#DAA360" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="178" y="648" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 F】逾期嚴重 → 回報 KPI Agent</text>
+            <text x="178" y="665" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 B/D 入口】接收跨 Agent 觸發</text>
+
+            <!-- 終點 -->
+            <path d="M178,676 L178,725" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <rect x="98" y="725" width="160" height="32" rx="16" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="178" y="746" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">結束排程</text>
+        </g>
+
+        <!-- ==================== COLUMN 3: 提案 Agent (x:782, w:356) ==================== -->
+        <g transform="translate(782, 110)">
+            <rect width="356" height="830" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="178" y="32" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">3. 提案 Agent</text>
+            <line x1="15" y1="45" x2="341" y2="45" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="58" y="60" width="240" height="48" rx="24" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="82" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">PM 手動輸入或連動觸發</text>
+            <text x="178" y="98" font-size="11" fill="#FFD6D6" text-anchor="middle">接收數據/KPI Agent 警示</text>
+
+            <path d="M178,108 L178,138" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,143 174,136 182,136" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="48" y="143" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="168" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">接收功能想法或異常警示</text>
+            <text x="178" y="188" font-size="11" fill="#ABBCCF" text-anchor="middle">如「智慧定期定額訂閱功能」</text>
+
+            <path d="M178,201 L178,226" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,231 174,224 182,224" fill="#DAA360"/>
+
+            <!-- S2 -->
+            <rect x="48" y="231" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="256" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">Bing Web Search 競品檢索</text>
+            <text x="178" y="276" font-size="11" fill="#ABBCCF" text-anchor="middle">搜尋公開市場報告與競品官網</text>
+
+            <path d="M178,289 L178,314" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,319 174,312 182,312" fill="#DAA360"/>
+
+            <!-- S3 -->
+            <rect x="48" y="319" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="344" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">LLM 產生競品對比矩陣</text>
+            <text x="178" y="364" font-size="11" fill="#ABBCCF" text-anchor="middle">分析優劣勢、市場定位與機會</text>
+
+            <path d="M178,377 L178,402" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,407 174,400 182,400" fill="#DAA360"/>
+
+            <!-- S4 -->
+            <rect x="48" y="407" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="432" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">擴充 PRD 文件</text>
+            <text x="178" y="452" font-size="11" fill="#ABBCCF" text-anchor="middle">自動生成 User Story 與驗收標準</text>
+
+            <path d="M178,465 L178,495" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,500 174,493 182,493" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="178,500 268,550 178,600 88,550" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="546" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">PM 確認通過?</text>
+            <text x="178" y="562" font-size="11" font-weight="bold" fill="#172439" text-anchor="middle">提案是否採納</text>
+
+            <!-- 是 -->
+            <path d="M178,600 L178,638" stroke="#51cf66" stroke-width="2" fill="none"/>
+            <polygon points="178,643 174,636 182,636" fill="#51cf66"/>
+            <text x="192" y="622" font-size="12" font-weight="bold" fill="#51cf66">是</text>
+
+            <!-- 連動標示 -->
+            <rect x="48" y="643" width="260" height="32" rx="6" fill="rgba(218,163,96,0.08)" stroke="#DAA360" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="178" y="664" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 G】建 Jira Epic → 時程自動追蹤</text>
+
+            <!-- 否 -->
+            <path d="M268,550 L326,550 L326,690 L178,690 L178,725" stroke="#C43826" stroke-width="1.5" fill="none"/>
+            <polygon points="178,725 174,718 182,718" fill="#C43826"/>
+            <text x="280" y="540" font-size="12" font-weight="bold" fill="#C43826">否</text>
+
+            <!-- 終點 -->
+            <path d="M178,675 L178,725" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <rect x="98" y="725" width="160" height="32" rx="16" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="178" y="746" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">結束會話</text>
+        </g>
+
+        <!-- ==================== COLUMN 4: KPI 管理 Agent (x:1158, w:356) ==================== -->
+        <g transform="translate(1158, 110)">
+            <rect width="356" height="830" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="178" y="32" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">4. KPI 管理 Agent</text>
+            <line x1="15" y1="45" x2="341" y2="45" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="58" y="60" width="240" height="48" rx="24" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="82" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">KPI 查詢或月度排程觸發</text>
+            <text x="178" y="98" font-size="11" fill="#FFD6D6" text-anchor="middle">接收數據 Agent 查詢結果</text>
+
+            <path d="M178,108 L178,138" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,143 174,136 182,136" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="48" y="143" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="168" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">讀取 SharePoint 季度目標值</text>
+            <text x="178" y="188" font-size="11" fill="#ABBCCF" text-anchor="middle">串接 Excel 中的 KPI 配置表</text>
+
+            <path d="M178,201 L178,226" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,231 174,224 182,224" fill="#DAA360"/>
+
+            <!-- S2 -->
+            <rect x="48" y="231" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="256" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">撈取實際累計數值</text>
+            <text x="178" y="276" font-size="11" fill="#ABBCCF" text-anchor="middle">連線 Cube / 神策 API 取得即時數據</text>
+
+            <path d="M178,289 L178,314" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,319 174,312 182,312" fill="#DAA360"/>
+
+            <!-- S3 -->
+            <rect x="48" y="319" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="344" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">計算 Gap 落差百分比</text>
+            <text x="178" y="364" font-size="11" fill="#ABBCCF" text-anchor="middle">目標 vs 實際，標記達成 / 落後</text>
+
+            <path d="M178,377 L178,407" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,412 174,405 182,405" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="178,412 268,462 178,512 88,462" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="458" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">進度是否落後?</text>
+            <text x="178" y="474" font-size="11" font-weight="bold" fill="#172439" text-anchor="middle">達成率 vs 時間進度</text>
+
+            <!-- 是 -->
+            <path d="M178,512 L178,555" stroke="#C43826" stroke-width="2" fill="none"/>
+            <polygon points="178,560 174,553 182,553" fill="#C43826"/>
+            <text x="192" y="537" font-size="12" font-weight="bold" fill="#C43826">是</text>
+
+            <rect x="48" y="560" width="260" height="58" rx="8" fill="#25334a" stroke="#C43826" stroke-width="1" filter="url(#shadow)"/>
+            <text x="178" y="585" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">啟動警示並推薦補救方案</text>
+            <text x="178" y="605" font-size="11" fill="#ABBCCF" text-anchor="middle">AI 根據歷史趨勢生成促銷策略</text>
+
+            <!-- 否 -->
+            <path d="M268,462 L326,462 L326,690 L178,690 L178,725" stroke="#51cf66" stroke-width="1.5" fill="none"/>
+            <polygon points="178,725 174,718 182,718" fill="#51cf66"/>
+            <text x="280" y="452" font-size="12" font-weight="bold" fill="#51cf66">否</text>
+
+            <!-- 連動標示 -->
+            <rect x="48" y="635" width="260" height="48" rx="6" fill="rgba(218,163,96,0.08)" stroke="#DAA360" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="178" y="655" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 B】落後 → 觸發時程 Agent 掃描</text>
+            <text x="178" y="672" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 C】嚴重落後 → 觸發提案 Agent</text>
+
+            <!-- 終點 -->
+            <path d="M178,683 L178,725" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <rect x="98" y="725" width="160" height="32" rx="16" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="178" y="746" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">結束分析</text>
+        </g>
+
+        <!-- ==================== COLUMN 5: 會議記錄 Agent (x:1534, w:356) ==================== -->
+        <g transform="translate(1534, 110)">
+            <rect width="356" height="830" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="178" y="32" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">5. 會議記錄 Agent</text>
+            <line x1="15" y1="45" x2="341" y2="45" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="58" y="60" width="240" height="48" rx="24" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="89" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">會議逐字稿輸入觸發</text>
+
+            <path d="M178,108 L178,138" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,143 174,136 182,136" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="48" y="143" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="168" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">Azure OpenAI 語意解析</text>
+            <text x="178" y="188" font-size="11" fill="#ABBCCF" text-anchor="middle">提取會議結論與 Action Items</text>
+
+            <path d="M178,201 L178,226" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,231 174,224 182,224" fill="#DAA360"/>
+
+            <!-- S2 -->
+            <rect x="48" y="231" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="256" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">呈現摘要與待辦事項</text>
+            <text x="178" y="276" font-size="11" fill="#ABBCCF" text-anchor="middle">含負責人、到期日與優先順序</text>
+
+            <path d="M178,289 L178,319" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,324 174,317 182,317" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="178,324 268,374 178,424 88,374" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="178" y="370" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">是否開立 Jira?</text>
+            <text x="178" y="386" font-size="11" font-weight="bold" fill="#172439" text-anchor="middle">工作閉環確認</text>
+
+            <!-- 是 -->
+            <path d="M178,424 L178,460" stroke="#51cf66" stroke-width="2" fill="none"/>
+            <polygon points="178,465 174,458 182,458" fill="#51cf66"/>
+            <text x="192" y="445" font-size="12" font-weight="bold" fill="#51cf66">是</text>
+
+            <rect x="48" y="465" width="260" height="58" rx="8" fill="#25334a" stroke="#51cf66" stroke-width="1" filter="url(#shadow)"/>
+            <text x="178" y="490" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">呼叫 Jira API 自動開單</text>
+            <text x="178" y="510" font-size="11" fill="#ABBCCF" text-anchor="middle">建立 Issue 並指派負責人與到期日</text>
+
+            <path d="M178,523 L178,548" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="178,553 174,546 182,546" fill="#DAA360"/>
+
+            <!-- S4 -->
+            <rect x="48" y="553" width="260" height="58" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="178" y="578" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">顯示派單成功卡片</text>
+            <text x="178" y="598" font-size="11" fill="#ABBCCF" text-anchor="middle">Copilot 呈現 JIRA-Key 與連結</text>
+
+            <!-- 否 -->
+            <path d="M268,374 L326,374 L326,690 L178,690 L178,725" stroke="#C43826" stroke-width="1.5" fill="none"/>
+            <polygon points="178,725 174,718 182,718" fill="#C43826"/>
+            <text x="280" y="365" font-size="12" font-weight="bold" fill="#C43826">否</text>
+
+            <!-- 連動標示 -->
+            <rect x="48" y="628" width="260" height="48" rx="6" fill="rgba(218,163,96,0.08)" stroke="#DAA360" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="178" y="648" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 D】派單 → 時程 Agent 自動追蹤</text>
+            <text x="178" y="665" font-size="11" font-weight="bold" fill="#DAA360" text-anchor="middle">【連動 H】待辦涉及 KPI → 更新追蹤</text>
+
+            <!-- 終點 -->
+            <path d="M178,676 L178,725" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <rect x="98" y="725" width="160" height="32" rx="16" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="178" y="746" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">結束會話</text>
+        </g>
+
+    </g>
+
+    <!-- ==================== 底部：跨 Agent 智慧協同連動機制圖例 ==================== -->
+    <rect x="30" y="955" width="1860" height="115" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="10"/>
+    <text x="960" y="980" font-family="'Noto Sans TC', sans-serif" font-size="16" font-weight="bold" fill="#DAA360" text-anchor="middle" letter-spacing="1">跨 Agent 智慧協同連動機制 (Multi-Agent Collaboration)</text>
+    <line x1="250" y1="990" x2="1670" y2="990" stroke="rgba(218,163,96,0.3)" stroke-width="1"/>
+
+    <g font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#E4E9F4">
+        <!-- Row 1 -->
+        <rect x="50" y="1000" width="14" height="14" rx="3" fill="#DAA360"/>
+        <text x="50" y="1012" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">A</text>
+        <text x="72" y="1012" font-size="12" fill="#E4E9F4">數據 → KPI：查詢結果自動餵入 KPI 達成率比對</text>
+
+        <rect x="460" y="1000" width="14" height="14" rx="3" fill="#DAA360"/>
+        <text x="460" y="1012" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">B</text>
+        <text x="482" y="1012" font-size="12" fill="#E4E9F4">KPI → 時程：KPI 落後觸發時程 Agent 逾期掃描與 Teams 警示</text>
+
+        <rect x="960" y="1000" width="14" height="14" rx="3" fill="#DAA360"/>
+        <text x="960" y="1012" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">C</text>
+        <text x="982" y="1012" font-size="12" fill="#E4E9F4">KPI → 提案：嚴重落後觸發提案 Agent 研擬功能補救方案</text>
+
+        <rect x="1460" y="1000" width="14" height="14" rx="3" fill="#DAA360"/>
+        <text x="1460" y="1012" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">D</text>
+        <text x="1482" y="1012" font-size="12" fill="#E4E9F4">會議 → 時程：Jira 派單自動納入時程監控</text>
+
+        <!-- Row 2 -->
+        <rect x="50" y="1025" width="14" height="14" rx="3" fill="#DAA360"/>
+        <text x="50" y="1037" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">E</text>
+        <text x="72" y="1037" font-size="12" fill="#E4E9F4">數據 → 提案：指標異常自動觸發產品優化提案與競品檢索</text>
+
+        <rect x="460" y="1025" width="14" height="14" rx="3" fill="#DAA360"/>
+        <text x="460" y="1037" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">F</text>
+        <text x="482" y="1037" font-size="12" fill="#E4E9F4">時程 → KPI：逾期嚴重回報 KPI Agent 重新評估達成率影響</text>
+
+        <rect x="960" y="1025" width="14" height="14" rx="3" fill="#DAA360"/>
+        <text x="960" y="1037" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">G</text>
+        <text x="982" y="1037" font-size="12" fill="#E4E9F4">提案 → 時程：通過提案建立 Jira Epic 納入時程自動追蹤</text>
+
+        <rect x="1460" y="1025" width="14" height="14" rx="3" fill="#DAA360"/>
+        <text x="1460" y="1037" font-size="12" font-weight="bold" fill="#172439" text-anchor="middle">H</text>
+        <text x="1482" y="1037" font-size="12" fill="#E4E9F4">會議 → KPI：待辦涉及 KPI 指標則更新追蹤</text>
+    </g>
+
+    <!-- 底部連動示意弧線 (3 條關鍵連線) -->
+    <!-- 連線 A：數據(Col1) → KPI(Col4)，經由底部弧線 -->
+    <path d="M 208,940 Q 208,952 750,952 Q 1336,952 1336,940" stroke="#DAA360" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+    <polygon points="1336,940 1332,948 1340,948" fill="#DAA360"/>
+
+    <!-- 連線 D：會議(Col5) → 時程(Col2)，經由底部弧線 -->
+    <path d="M 1712,940 Q 1712,948 1150,948 Q 584,948 584,940" stroke="#DAA360" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+    <polygon points="584,940 580,948 588,948" fill="#DAA360"/>
+
+    <!-- 連線 B：KPI(Col4) → 時程(Col2)，經由底部弧線 -->
+    <path d="M 1336,940 Q 1336,945 960,945 Q 584,945 584,940" stroke="#C43826" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+
+</svg>
