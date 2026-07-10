@@ -66,7 +66,9 @@ PM 自然語言
 
 ## 四、資安三題（審查前先備好答案）
 
-1. **資料出口**：用 Copilot Studio／Azure OpenAI（租戶內），內部數據不出企業邊界。
+1. **資料出口**：Copilot Studio（Azure OpenAI）的 prompts 與回應存於 **Microsoft Cloud 信任邊界**內、
+   依租戶所選地理區存放，不用於訓練模型、不與 OpenAI 共享；本方案不啟用 Bing 搜尋與第三方外掛。
+   （2026/07/10 依官方文件修正措辭，詳見 Copilot_Studio_能力查證報告.md 第 15 項）
 2. **權限繼承**：查詢帶 PM 身分做列級權限，不用服務帳號一把撈全部，杜絕越權看數。
 3. **稽核軌跡**：誰查了什麼、催了誰、開了什麼單，Power Automate 全程留 Log。
 

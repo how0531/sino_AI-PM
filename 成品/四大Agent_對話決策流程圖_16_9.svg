@@ -1,0 +1,297 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <defs>
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+        </filter>
+        <linearGradient id="grad-header" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C43826" />
+            <stop offset="100%" stop-color="#DAA360" />
+        </linearGradient>
+    </defs>
+
+    <!-- 背景 -->
+    <rect width="1920" height="1080" fill="#172439"/>
+
+    <!-- 頂部標題 -->
+    <rect x="0" y="0" width="1920" height="88" fill="#0f1827"/>
+    <rect x="28" y="84" width="1864" height="4" fill="url(#grad-header)"/>
+    <text x="960" y="55" font-family="'Noto Sans TC', sans-serif" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="2">AIPM 四大核心 Agent 對話決策流程圖 (16:9 簡報投影版)</text>
+
+    <!-- 主體區域 -->
+    <g font-family="'Noto Sans TC', sans-serif">
+
+        <!-- ==================== COLUMN 1: 會議記錄 Agent (x:28, w:436) ==================== -->
+        <g transform="translate(28, 130)">
+            <rect width="436" height="810" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="218" y="36" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">1. 會議記錄 Agent 流程（Phase 1）</text>
+            <line x1="15" y1="50" x2="421" y2="50" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="88" y="60" width="260" height="50" rx="25" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="90" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">會議逐字稿輸入觸發</text>
+
+            <path d="M218,110 L218,138" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,144 214,137 222,137" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="58" y="144" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="171" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">提取結論與待辦</text>
+            <text x="218" y="194" font-size="13" fill="#C7D3E3" text-anchor="middle">LLM 語意重點解析・不用於模型訓練</text>
+
+            <path d="M218,208 L218,236" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,242 214,235 222,235" fill="#DAA360"/>
+
+            <!-- S2 -->
+            <rect x="58" y="242" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="269" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">產出待辦清單</text>
+            <text x="218" y="292" font-size="13" fill="#C7D3E3" text-anchor="middle">負責人・期限・「需確認」標記</text>
+
+            <path d="M218,306 L218,330" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,336 214,329 222,329" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="218,336 323,388 218,440 113,388" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="393" font-size="15" font-weight="bold" fill="#172439" text-anchor="middle">PM 是否確認開單？</text>
+
+            <!-- 否 (左側繞行直達結尾) -->
+            <path d="M113,388 L26,388 L26,712 L218,712" stroke="#C43826" stroke-width="1.5" fill="none"/>
+            <text x="70" y="378" font-size="14" font-weight="bold" fill="#C43826" text-anchor="middle">否</text>
+
+            <!-- 是 -->
+            <path d="M218,440 L218,478" stroke="#51cf66" stroke-width="2" fill="none"/>
+            <polygon points="218,484 214,477 222,477" fill="#51cf66"/>
+            <text x="232" y="466" font-size="14" font-weight="bold" fill="#51cf66">是</text>
+
+            <!-- S3 (綠色邊框) -->
+            <rect x="58" y="484" width="320" height="64" rx="8" fill="#25334a" stroke="#51cf66" stroke-width="1" filter="url(#shadow)"/>
+            <text x="218" y="511" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">呼叫 Planner API 開單</text>
+            <text x="218" y="534" font-size="13" fill="#C7D3E3" text-anchor="middle">依 PM 核可內容寫入共用資料層</text>
+
+            <!-- 終點 -->
+            <path d="M218,548 L218,740" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,746 214,739 222,739" fill="#C43826"/>
+            <rect x="128" y="746" width="180" height="38" rx="19" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="218" y="770" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">結束會話</text>
+        </g>
+
+        <!-- ==================== COLUMN 2: 時程 Agent (x:504, w:436) ==================== -->
+        <g transform="translate(504, 130)">
+            <rect width="436" height="810" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="218" y="36" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">2. 時程 Agent 流程（Phase 1）</text>
+            <line x1="15" y1="50" x2="421" y2="50" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="88" y="60" width="260" height="50" rx="25" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="90" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">每日 17:00 排程觸發</text>
+
+            <path d="M218,110 L218,134" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,140 214,133 222,133" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="58" y="140" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="167" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">自動掃描 Planner 看板</text>
+            <text x="218" y="190" font-size="13" fill="#C7D3E3" text-anchor="middle">檢索逾期與今日到期任務</text>
+
+            <path d="M218,204 L218,224" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,230 214,223 222,223" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="218,230 323,282 218,334 113,282" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="287" font-size="15" font-weight="bold" fill="#172439" text-anchor="middle">是否有逾期／到期？</text>
+
+            <!-- 否 (右側繞行直達結尾) -->
+            <path d="M323,282 L410,282 L410,712 L218,712" stroke="#C43826" stroke-width="1.5" fill="none"/>
+            <text x="366" y="272" font-size="14" font-weight="bold" fill="#C43826" text-anchor="middle">否</text>
+
+            <!-- 是 -->
+            <path d="M218,334 L218,372" stroke="#51cf66" stroke-width="2" fill="none"/>
+            <polygon points="218,378 214,371 222,371" fill="#51cf66"/>
+            <text x="232" y="360" font-size="14" font-weight="bold" fill="#51cf66">是</text>
+
+            <!-- S2 -->
+            <rect x="58" y="378" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="405" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">生成委婉催辦草稿</text>
+            <text x="218" y="428" font-size="13" fill="#C7D3E3" text-anchor="middle">AI 撰寫・對事不對人</text>
+
+            <path d="M218,442 L218,470" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,476 214,469 222,469" fill="#DAA360"/>
+
+            <!-- S3 (警示色邊框) -->
+            <rect x="58" y="476" width="320" height="64" rx="8" fill="#25334a" stroke="#DAA360" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="503" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">PM 確認關卡</text>
+            <text x="218" y="526" font-size="13" fill="#C7D3E3" text-anchor="middle">逐則核可・不自動直發</text>
+
+            <path d="M218,540 L218,568" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,574 214,567 222,567" fill="#DAA360"/>
+
+            <!-- S4 -->
+            <rect x="58" y="574" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="601" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">Teams／Outlook 發送</text>
+            <text x="218" y="624" font-size="13" fill="#C7D3E3" text-anchor="middle">逾期 2 天升級催辦</text>
+
+            <!-- 終點 -->
+            <path d="M218,638 L218,740" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,746 214,739 222,739" fill="#C43826"/>
+            <rect x="128" y="746" width="180" height="38" rx="19" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="218" y="770" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">結束排程</text>
+        </g>
+
+        <!-- ==================== COLUMN 3: KPI Agent (x:980, w:436) ==================== -->
+        <g transform="translate(980, 130)">
+            <rect width="436" height="810" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="218" y="36" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">3. KPI Agent 流程（P1 執行層｜P2 業務層）</text>
+            <line x1="15" y1="50" x2="421" y2="50" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="88" y="60" width="260" height="50" rx="25" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="90" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">KPI 查詢／週期觸發</text>
+
+            <path d="M218,110 L218,132" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,138 214,131 222,131" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="58" y="138" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="165" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">讀取 KPI 目標值</text>
+            <text x="218" y="188" font-size="13" fill="#C7D3E3" text-anchor="middle">SharePoint Excel</text>
+
+            <path d="M218,202 L218,240" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,246 214,239 222,239" fill="#DAA360"/>
+
+            <!-- S2 -->
+            <rect x="58" y="246" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="273" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">撈取實際數值</text>
+            <text x="218" y="296" font-size="13" fill="#C7D3E3" text-anchor="middle">P1：Planner；P2：數據管線</text>
+
+            <path d="M218,310 L218,332" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,338 214,331 222,331" fill="#DAA360"/>
+
+            <!-- S3 -->
+            <rect x="58" y="338" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="365" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">Gap 純程式計算</text>
+            <text x="218" y="388" font-size="13" fill="#C7D3E3" text-anchor="middle">目標 vs 現況 vs 時間進度</text>
+
+            <path d="M218,402 L218,418" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,424 214,417 222,417" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="218,424 323,476 218,528 113,476" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="481" font-size="15" font-weight="bold" fill="#172439" text-anchor="middle">進度是否落後？</text>
+
+            <!-- 否 (右側繞行直達結尾) -->
+            <path d="M323,476 L410,476 L410,712 L218,712" stroke="#C43826" stroke-width="1.5" fill="none"/>
+            <text x="366" y="466" font-size="14" font-weight="bold" fill="#C43826" text-anchor="middle">否</text>
+
+            <!-- 是 -->
+            <path d="M218,528 L218,564" stroke="#51cf66" stroke-width="2" fill="none"/>
+            <polygon points="218,570 214,563 222,563" fill="#51cf66"/>
+            <text x="232" y="552" font-size="14" font-weight="bold" fill="#51cf66">是</text>
+
+            <!-- S4 (紅色邊框) -->
+            <rect x="58" y="570" width="320" height="64" rx="8" fill="#25334a" stroke="#C43826" stroke-width="1" filter="url(#shadow)"/>
+            <text x="218" y="597" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">警示＋補救建議</text>
+            <text x="218" y="620" font-size="13" fill="#C7D3E3" text-anchor="middle">建議標「參考」・由 PM 判斷</text>
+
+            <!-- 終點 -->
+            <path d="M218,634 L218,740" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,746 214,739 222,739" fill="#51cf66"/>
+            <rect x="128" y="746" width="180" height="38" rx="19" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="218" y="770" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">結束分析</text>
+        </g>
+
+        <!-- ==================== COLUMN 4: 數據 Agent (x:1456, w:436) ==================== -->
+        <g transform="translate(1456, 130)">
+            <rect width="436" height="810" fill="#0f1827" stroke="rgba(171,188,207,0.12)" stroke-width="1.5" rx="12"/>
+            <text x="218" y="36" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle">4. 數據 Agent 流程（Phase 2）</text>
+            <line x1="15" y1="50" x2="421" y2="50" stroke="rgba(171,188,207,0.15)" stroke-width="1"/>
+
+            <!-- 起點 -->
+            <rect x="88" y="60" width="260" height="50" rx="25" fill="#C43826" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="90" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">數據查詢意圖觸發</text>
+
+            <path d="M218,110 L218,132" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,138 214,131 222,131" fill="#DAA360"/>
+
+            <!-- S1 -->
+            <rect x="58" y="138" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="165" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">使用者自然語言輸入</text>
+            <text x="218" y="188" font-size="13" fill="#C7D3E3" text-anchor="middle">例：「查詢 iOS 次日留存率」</text>
+
+            <path d="M218,202 L218,224" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,230 214,223 222,223" fill="#DAA360"/>
+
+            <!-- S2 (高亮邊框) -->
+            <rect x="58" y="230" width="320" height="64" rx="8" fill="#25334a" stroke="#DAA360" stroke-width="2" filter="url(#shadow)"/>
+            <text x="218" y="257" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">查詢範本白名單守門</text>
+            <text x="218" y="280" font-size="13" fill="#C7D3E3" text-anchor="middle">LLM 只填參數・不生 SQL</text>
+
+            <path d="M218,294 L218,312" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,318 214,311 222,311" fill="#DAA360"/>
+
+            <!-- 判定 -->
+            <polygon points="218,318 323,370 218,422 113,370" fill="#DAA360" stroke="#fff" stroke-width="1.5" filter="url(#shadow)"/>
+            <text x="218" y="375" font-size="15" font-weight="bold" fill="#172439" text-anchor="middle">範本是否支援？</text>
+
+            <!-- 否 (右側繞行直達結尾) -->
+            <path d="M323,370 L410,370 L410,712 L218,712" stroke="#C43826" stroke-width="1.5" fill="none"/>
+            <text x="366" y="360" font-size="14" font-weight="bold" fill="#C43826" text-anchor="middle">否</text>
+
+            <!-- 是 -->
+            <path d="M218,422 L218,460" stroke="#51cf66" stroke-width="2" fill="none"/>
+            <polygon points="218,466 214,459 222,459" fill="#51cf66"/>
+            <text x="232" y="448" font-size="14" font-weight="bold" fill="#51cf66">是</text>
+
+            <!-- S3 -->
+            <rect x="58" y="466" width="320" height="64" rx="8" fill="#25334a" stroke="rgba(171,188,207,0.25)" filter="url(#shadow)"/>
+            <text x="218" y="493" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">內部 API／Gateway 查詢</text>
+            <text x="218" y="516" font-size="13" fill="#C7D3E3" text-anchor="middle">on-prem gateway 連 CUBE／神策</text>
+
+            <path d="M218,530 L218,552" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,558 214,551 222,551" fill="#DAA360"/>
+
+            <!-- S4 (綠色邊框) -->
+            <rect x="58" y="558" width="320" height="64" rx="8" fill="#25334a" stroke="#51cf66" stroke-width="1" filter="url(#shadow)"/>
+            <text x="218" y="585" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">生成繁中摘要＋表格</text>
+            <text x="218" y="608" font-size="13" fill="#C7D3E3" text-anchor="middle">Copilot 回傳繁體中文報告</text>
+
+            <!-- 終點 -->
+            <path d="M218,622 L218,740" stroke="#DAA360" stroke-width="2" fill="none"/>
+            <polygon points="218,746 214,739 222,739" fill="#C43826"/>
+            <rect x="128" y="746" width="180" height="38" rx="19" fill="#C43826" stroke="#fff" stroke-width="1.5"/>
+            <text x="218" y="770" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">結束對話</text>
+        </g>
+
+    </g>
+
+    <!-- ==================== 底部：共用資料層橫幅 ==================== -->
+    <rect x="28" y="990" width="1864" height="55" fill="#C43826" stroke="#fff" stroke-width="1.5" rx="10"/>
+    <text x="960" y="1023" font-family="'Noto Sans TC', sans-serif" font-size="16" text-anchor="middle"><tspan font-weight="bold" fill="#fff">共用資料層：Planner（任務）＋ SharePoint（文件／KPI 目標）</tspan><tspan fill="rgba(255,255,255,0.55)">　｜　</tspan><tspan fill="#fff">寫入與外送動作一律 PM 確認（人在迴路）</tspan><tspan fill="rgba(255,255,255,0.55)">　｜　</tspan><tspan fill="#fff">全程稽核 Log</tspan></text>
+
+    <!-- ==================== 跨 Agent 協作連線 (青藍色 #38bdf8) ==================== -->
+    <g font-family="'Noto Sans TC', sans-serif">
+        <!-- 連線 1：會議記錄「呼叫 Planner API 開單」 → 共用資料層 (寫入待辦) -->
+        <path d="M406,646 L476,646 L476,984" stroke="#38bdf8" stroke-width="2" fill="none"/>
+        <polygon points="476,990 472,983 480,983" fill="#38bdf8"/>
+        <text x="468" y="962" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="end">寫入待辦</text>
+
+        <!-- 連線 2：共用資料層 → 時程「自動掃描 Planner 看板」 (讀取任務) -->
+        <path d="M492,990 L492,302 L556,302" stroke="#38bdf8" stroke-width="2" fill="none"/>
+        <polygon points="562,302 555,298 555,306" fill="#38bdf8"/>
+        <text x="500" y="962" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="start">讀取任務</text>
+
+        <!-- 連線 3：共用資料層 → KPI「撈取實際數值」 (讀取執行數據) -->
+        <path d="M970,990 L970,385 L1032,385" stroke="#38bdf8" stroke-width="2" fill="none"/>
+        <polygon points="1038,385 1031,381 1031,389" fill="#38bdf8"/>
+        <text x="960" y="962" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="end">讀取執行數據</text>
+
+        <!-- 連線 4：數據「生成繁中摘要＋表格」 → KPI「撈取實際數值」 (P2 業務數據管線, 虛線) -->
+        <path d="M1514,720 L1436,720 L1436,348 L1300,348 L1300,370" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,5" fill="none"/>
+        <polygon points="1300,376 1296,369 1304,369" fill="#38bdf8"/>
+        <text x="1360" y="365" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">P2 業務數據管線</text>
+
+        <!-- 連線 5：KPI「警示＋補救建議」 → 會議記錄起點 (缺口議題帶入下次會議, 虛線, 標題下方繞行) -->
+        <path d="M1038,732 L978,732 A8 8 0 0 0 962,732 L950,732 L950,112 L14,112 L14,306 L80,306" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,5" fill="none"/>
+        <polygon points="86,306 79,302 79,310" fill="#38bdf8"/>
+        <text x="482" y="106" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">缺口議題帶入下次會議</text>
+    </g>
+
+</svg>

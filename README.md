@@ -4,6 +4,16 @@
 
 ## 檔案對照表
 
+### 競賽提案（2026/07/10 多 Agent 版定稿）
+
+* AI競賽.pptx - 競賽提案簡報（已填：四核心 Agent＋協作閉環版；待補第 6 頁真實量化數字與第 7 頁 Copilot Studio 截圖）。
+* 文件/AIPM_多Agent架構規劃.md - 多 Agent 架構定稿（四核心＋跨 Agent 協作閉環＋落地順序＋待辦）。
+* 文件/Copilot_Studio_能力查證報告.md - 19 項能力逐一查證（官方文件出處）＋簡報話術修正＋答辯 Q&A。
+* four_agents_detailed_flow_16_9.png（源檔：成品/四大Agent_對話決策流程圖_16_9.svg）- 簡報第 5 頁用四大 Agent 對話決策流程圖，含 5 條跨 Agent 協作連線。
+* aipm_architecture_4agents_16_9.png（源檔：成品/AIPM_四Agent_運作架構圖_16_9.svg）- 四 Agent 總架構圖（答辯/附錄備用）。
+
+### 早期規劃（五 Agent 舊版，留檔參考）
+
 * 文件/企業增效_Agent_規劃書.md - 完整的規劃書定稿，包含技術架構、資安權限控管與 5 大 Agent 詳細設計。
 * 文件/企業增效_Agent_可行性評估與建置指南簡報.md - 提供五大 Agent 的可行性評估報告、AI 競賽簡報大綱（內含 Mermaid 對話與系統流程圖）以及 Copilot Studio 與 Power Automate 逐步建置指南。
 * 成品/index.html - 網頁版互動展示平台主頁面，提供動態模擬與視覺展示。

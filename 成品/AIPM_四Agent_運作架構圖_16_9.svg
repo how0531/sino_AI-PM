@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <!-- 定義樣式與濾鏡 -->
+    <defs>
+        <!-- 卡片發光陰影 -->
+        <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000000" flood-opacity="0.5"/>
+        </filter>
+        <!-- 漸層定義 -->
+        <linearGradient id="grad-header" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C43826" />
+            <stop offset="100%" stop-color="#DAA360" />
+        </linearGradient>
+        <linearGradient id="grad-copilot" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#25334a" />
+            <stop offset="100%" stop-color="#1f2c40" />
+        </linearGradient>
+    </defs>
+
+    <!-- 背景 -->
+    <rect width="1920" height="1080" fill="#172439" rx="20"/>
+
+    <!-- 頂部標題區 -->
+    <rect x="0" y="0" width="1920" height="115" fill="#0f1827" rx="20"/>
+    <rect x="60" y="111" width="1800" height="4" fill="url(#grad-header)"/>
+    <text x="960" y="70" font-family="'Noto Sans TC', sans-serif" font-size="38" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="2">AIPM 智能專案經理：多 Agent 運作架構圖</text>
+
+    <!-- 左側：使用者入口與對話中樞 (寬度 400, 高度 880) -->
+    <g transform="translate(60, 145)">
+        <rect width="400" height="880" fill="#0f1827" stroke="rgba(171, 188, 207, 0.15)" stroke-width="2" rx="16" filter="url(#card-shadow)"/>
+        <text x="200" y="45" font-family="'Noto Sans TC', sans-serif" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle" letter-spacing="1">使用者入口與對話中樞</text>
+        <line x1="30" y1="65" x2="370" y2="65" stroke="rgba(171, 188, 207, 0.2)" stroke-width="1.5"/>
+
+        <!-- 使用者入口卡片 -->
+        <rect x="30" y="90" width="340" height="85" fill="#25334a" stroke="rgba(171, 188, 207, 0.2)" rx="10"/>
+        <text x="200" y="125" font-family="'Noto Sans TC', sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">企業使用者端</text>
+        <text x="200" y="152" font-family="'Noto Sans TC', sans-serif" font-size="14" fill="#ABBCCF" text-anchor="middle">Microsoft Teams／網頁嵌入介面</text>
+
+        <!-- 連接線 -->
+        <path d="M 200,175 L 200,208" stroke="#DAA360" stroke-width="3" fill="none"/>
+        <polygon points="200,220 195,207 205,207" fill="#DAA360"/>
+
+        <!-- Copilot Studio 主 Agent 核心 -->
+        <rect x="30" y="225" width="340" height="476" fill="url(#grad-copilot)" stroke="#DAA360" stroke-width="2" rx="10" filter="url(#card-shadow)"/>
+        <rect x="40" y="243" width="320" height="64" fill="#C43826" rx="6"/>
+        <text x="200" y="269" font-family="'Noto Sans TC', sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Microsoft Copilot Studio — AIPM 主 Agent</text>
+        <text x="200" y="292" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="rgba(255,255,255,0.85)" text-anchor="middle">意圖分流（connected agents）</text>
+
+        <!-- 4 大子 Agent 分流 -->
+        <g transform="translate(45, 327)">
+            <!-- Agent 1 -->
+            <rect x="0" y="0" width="310" height="75" fill="#172439" stroke="rgba(171, 188, 207, 0.15)" rx="8"/>
+            <text x="20" y="32" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#E4E9F4">1. 會議記錄 Agent（Phase 1）</text>
+            <text x="20" y="55" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#ABBCCF">逐字稿→待辦→PM 確認→開單</text>
+
+            <!-- Agent 2 -->
+            <rect x="0" y="93" width="310" height="75" fill="#172439" stroke="rgba(171, 188, 207, 0.15)" rx="8"/>
+            <text x="20" y="125" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#E4E9F4">2. 時程 Agent（Phase 1）</text>
+            <text x="20" y="148" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#ABBCCF">排程掃描・催辦草稿・Power BI 甘特圖</text>
+
+            <!-- Agent 3 -->
+            <rect x="0" y="186" width="310" height="75" fill="#172439" stroke="rgba(171, 188, 207, 0.15)" rx="8"/>
+            <text x="20" y="218" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#E4E9F4">3. KPI Agent（P1 執行層｜P2 業務層）</text>
+            <text x="20" y="241" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#ABBCCF">Gap 純程式計算・標「參考」</text>
+
+            <!-- Agent 4 -->
+            <rect x="0" y="279" width="310" height="75" fill="#172439" stroke="rgba(171, 188, 207, 0.15)" rx="8"/>
+            <text x="20" y="311" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#E4E9F4">4. 數據 Agent（Phase 2）</text>
+            <text x="20" y="334" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#ABBCCF">白名單查詢 CUBE／神策</text>
+        </g>
+
+        <!-- 未來擴充（虛線邊框） -->
+        <rect x="30" y="735" width="340" height="85" fill="rgba(37, 51, 74, 0.5)" stroke="rgba(171, 188, 207, 0.45)" stroke-width="1.5" stroke-dasharray="7,5" rx="10"/>
+        <text x="50" y="770" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#C7D3E2">未來擴充：知識庫 Agent・週報 Agent</text>
+        <text x="50" y="795" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#ABBCCF">SharePoint RAG・每週彙整草稿</text>
+    </g>
+
+    <!-- 中間：Power Automate Flow 後端自動化 (寬度 900, 高度 880) -->
+    <g transform="translate(510, 145)">
+        <rect width="900" height="880" fill="#0f1827" stroke="rgba(171, 188, 207, 0.15)" stroke-width="2" rx="16" filter="url(#card-shadow)"/>
+        <text x="450" y="45" font-family="'Noto Sans TC', sans-serif" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle" letter-spacing="1">Power Automate Flow 後端自動化</text>
+        <line x1="30" y1="65" x2="870" y2="65" stroke="rgba(171, 188, 207, 0.2)" stroke-width="1.5"/>
+
+        <!-- 流程 1：會議記錄 -->
+        <g transform="translate(30, 90)">
+            <rect width="720" height="105" fill="#25334a" stroke="rgba(171, 188, 207, 0.15)" rx="10"/>
+            <text x="25" y="32" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#ffffff">會議記錄流程（Meeting Flow・P1）</text>
+            <g font-family="'Noto Sans TC', sans-serif" font-size="12.5" fill="#ABBCCF" transform="translate(25, 68)">
+                <text x="0" y="0">1. 逐字稿解析</text>
+                <text x="86" y="0" fill="#DAA360">➜</text>
+                <text x="110" y="0">2. 待辦清單（負責人/期限/需確認）</text>
+                <text x="317" y="0" fill="#DAA360">➜</text>
+                <text x="341" y="0">3. PM 確認（Adaptive Card）</text>
+                <text x="519" y="0" fill="#DAA360">➜</text>
+                <text x="543" y="0" fill="#ffffff" font-weight="bold">4. Planner 開單</text>
+            </g>
+        </g>
+
+        <!-- 流程 2：時程 -->
+        <g transform="translate(30, 219)">
+            <rect width="720" height="105" fill="#25334a" stroke="rgba(171, 188, 207, 0.15)" rx="10"/>
+            <text x="25" y="32" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#ffffff">時程流程（Timeline Flow・P1）</text>
+            <g font-family="'Noto Sans TC', sans-serif" font-size="12.5" fill="#ABBCCF" transform="translate(25, 68)">
+                <text x="0" y="0">1. 每日排程觸發</text>
+                <text x="96" y="0" fill="#DAA360">➜</text>
+                <text x="118" y="0">2. 掃逾期/今日到期</text>
+                <text x="231" y="0" fill="#DAA360">➜</text>
+                <text x="253" y="0">3. 催辦草稿</text>
+                <text x="325" y="0" fill="#DAA360">➜</text>
+                <text x="347" y="0" fill="#ffffff" font-weight="bold">4. PM 核可後 Teams/Outlook 發送（逾期 2 天升級）</text>
+            </g>
+        </g>
+
+        <!-- 流程 3：KPI -->
+        <g transform="translate(30, 348)">
+            <rect width="720" height="105" fill="#25334a" stroke="rgba(171, 188, 207, 0.15)" rx="10"/>
+            <text x="25" y="32" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#ffffff">KPI 流程（KPI Flow・P1→P2）</text>
+            <g font-family="'Noto Sans TC', sans-serif" font-size="12.5" fill="#ABBCCF" transform="translate(25, 68)">
+                <text x="0" y="0">1. 讀 SharePoint 目標</text>
+                <text x="133" y="0" fill="#DAA360">➜</text>
+                <text x="157" y="0">2. 撈 Planner/數據管線</text>
+                <text x="297" y="0" fill="#DAA360">➜</text>
+                <text x="321" y="0">3. Gap 程式計算</text>
+                <text x="422" y="0" fill="#DAA360">➜</text>
+                <text x="446" y="0" fill="#ffffff" font-weight="bold">4. 警示＋建議標「參考」</text>
+            </g>
+        </g>
+
+        <!-- 流程 4：數據查詢 -->
+        <g transform="translate(30, 477)">
+            <rect width="720" height="105" fill="#25334a" stroke="rgba(171, 188, 207, 0.15)" rx="10"/>
+            <text x="25" y="32" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#ffffff">數據查詢流程（Query Flow・P2）</text>
+            <g font-family="'Noto Sans TC', sans-serif" font-size="12.5" fill="#ABBCCF" transform="translate(25, 68)">
+                <text x="0" y="0">1. 自然語言輸入</text>
+                <text x="98" y="0" fill="#DAA360">➜</text>
+                <text x="122" y="0">2. 查詢範本白名單守門</text>
+                <text x="258" y="0" fill="#DAA360">➜</text>
+                <text x="282" y="0">3. LLM 只填參數（不生 SQL）</text>
+                <text x="461" y="0" fill="#DAA360">➜</text>
+                <text x="485" y="0" fill="#ffffff" font-weight="bold">4. 繁中摘要＋表格</text>
+            </g>
+        </g>
+
+        <!-- 共用資料層橫幅 -->
+        <g transform="translate(30, 700)">
+            <rect width="720" height="75" fill="#25334a" stroke="rgba(78, 201, 220, 0.65)" stroke-width="1.5" rx="10"/>
+            <text x="360" y="45" font-family="'Noto Sans TC', sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">共用資料層：Planner（任務）＋ SharePoint（文件／KPI 目標）</text>
+        </g>
+        <text x="390" y="812" font-family="'Noto Sans TC', sans-serif" font-size="13" fill="#4EC9DC" text-anchor="middle">管理閉環：會議開單 → 時程追蹤 → KPI 達成率 → 下次會議</text>
+
+        <!-- 協作閉環連接線（青藍色，走右側卡片間隙） -->
+        <!-- A: Meeting Flow → 共用資料層（寫入待辦） -->
+        <path d="M 750,170 L 770,170 L 770,715 L 762,715" stroke="#4EC9DC" stroke-width="2" fill="none"/>
+        <polygon points="750,715 760,710 760,720" fill="#4EC9DC"/>
+        <text transform="rotate(90, 755, 560)" x="755" y="560" font-family="'Noto Sans TC', sans-serif" font-size="11" fill="#4EC9DC" text-anchor="middle">（寫入待辦）</text>
+
+        <!-- B: 共用資料層 → Timeline Flow（讀取任務） -->
+        <path d="M 750,728 L 795,728 L 795,255 L 762,255" stroke="#4EC9DC" stroke-width="2" fill="none"/>
+        <polygon points="750,255 760,250 760,260" fill="#4EC9DC"/>
+        <text transform="rotate(90, 780, 630)" x="780" y="630" font-family="'Noto Sans TC', sans-serif" font-size="11" fill="#4EC9DC" text-anchor="middle">（讀取任務）</text>
+
+        <!-- C: 共用資料層 → KPI Flow（讀取執行數據） -->
+        <path d="M 750,750 L 820,750 L 820,410 L 762,410" stroke="#4EC9DC" stroke-width="2" fill="none"/>
+        <polygon points="750,410 760,405 760,415" fill="#4EC9DC"/>
+        <text transform="rotate(90, 805, 570)" x="805" y="570" font-family="'Noto Sans TC', sans-serif" font-size="11" fill="#4EC9DC" text-anchor="middle">（讀取執行數據）</text>
+
+        <!-- D: KPI Flow → Meeting Flow（缺口議題帶入下次會議，虛線） -->
+        <path d="M 750,370 L 845,370 L 845,120 L 762,120" stroke="#4EC9DC" stroke-width="2" stroke-dasharray="6,5" fill="none"/>
+        <polygon points="750,120 760,115 760,125" fill="#4EC9DC"/>
+        <text transform="rotate(90, 830, 245)" x="830" y="245" font-family="'Noto Sans TC', sans-serif" font-size="11" fill="#4EC9DC" text-anchor="middle">（缺口議題帶入下次會議）</text>
+
+        <!-- Query Flow → KPI Flow（P2 業務數據管線，虛線） -->
+        <path d="M 140,477 L 140,461" stroke="#4EC9DC" stroke-width="2" stroke-dasharray="5,4" fill="none"/>
+        <polygon points="140,453 135,463 145,463" fill="#4EC9DC"/>
+        <text x="156" y="470" font-family="'Noto Sans TC', sans-serif" font-size="11" fill="#4EC9DC">（P2 業務數據管線）</text>
+    </g>
+
+    <!-- 右側：企業系統與資安控管 (寬度 400, 高度 880) -->
+    <g transform="translate(1460, 145)">
+        <rect width="400" height="880" fill="#0f1827" stroke="rgba(171, 188, 207, 0.15)" stroke-width="2" rx="16" filter="url(#card-shadow)"/>
+        <text x="200" y="45" font-family="'Noto Sans TC', sans-serif" font-size="20" font-weight="bold" fill="#DAA360" text-anchor="middle" letter-spacing="1">企業系統與資安控管</text>
+        <line x1="30" y1="65" x2="370" y2="65" stroke="rgba(171, 188, 207, 0.2)" stroke-width="1.5"/>
+
+        <!-- 串接端卡片 -->
+        <g transform="translate(30, 90)">
+            <!-- 專案協作 -->
+            <rect x="0" y="0" width="340" height="85" fill="#172439" stroke="rgba(171, 188, 207, 0.15)" rx="8"/>
+            <text x="20" y="36" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#ffffff">專案協作端（Planner／SharePoint）</text>
+            <text x="20" y="61" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#ABBCCF">M365 原生連接器・零基建</text>
+
+            <!-- 通知發送 -->
+            <rect x="0" y="105" width="340" height="85" fill="#172439" stroke="rgba(171, 188, 207, 0.15)" rx="8"/>
+            <text x="20" y="141" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#ffffff">通知發送端（Teams／Outlook）</text>
+            <text x="20" y="166" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#ABBCCF">催辦與警示・PM 核可後發送</text>
+
+            <!-- 數據存取 -->
+            <rect x="0" y="210" width="340" height="85" fill="#172439" stroke="rgba(171, 188, 207, 0.15)" rx="8"/>
+            <text x="20" y="246" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="bold" fill="#ffffff">數據存取端（CUBE／神策）</text>
+            <text x="20" y="271" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#ABBCCF">Phase 2・on-premises data gateway／內部 API</text>
+        </g>
+
+        <!-- 資安控管與防護政策 -->
+        <rect x="30" y="420" width="340" height="420" fill="rgba(196, 56, 38, 0.05)" stroke="#C43826" stroke-width="2" rx="10"/>
+        <text x="200" y="462" font-family="'Noto Sans TC', sans-serif" font-size="16" font-weight="bold" fill="#C43826" text-anchor="middle">資安控管與防護政策</text>
+        <line x1="50" y1="488" x2="350" y2="488" stroke="rgba(196, 56, 38, 0.2)" stroke-width="1.5"/>
+
+        <g font-family="'Noto Sans TC', sans-serif" font-size="13" fill="#E4E9F4" transform="translate(50, 540)">
+            <text x="0" y="0" font-size="11">1. Azure OpenAI 於 Microsoft Cloud 信任邊界・不用於模型訓練</text>
+            <text x="0" y="55">2. 查詢帶 PM 身分・列級權限杜絕越權看數</text>
+            <text x="0" y="110">3. 查詢範本白名單・LLM 不自由生 SQL</text>
+            <text x="0" y="165">4. 寫入／外送一律 PM 確認（人在迴路）</text>
+            <text x="0" y="220">5. 全程稽核 Log・誰查了什麼皆可回溯</text>
+        </g>
+    </g>
+
+    <!-- 中央流程連接虛線 (左到中，中到右) -->
+    <!-- 左區到中區 -->
+    <path d="M 460,287 L 510,287" stroke="#ABBCCF" stroke-width="1.5" stroke-dasharray="6,6" fill="none"/>
+    <path d="M 460,416 L 510,416" stroke="#ABBCCF" stroke-width="1.5" stroke-dasharray="6,6" fill="none"/>
+    <path d="M 460,545 L 510,545" stroke="#ABBCCF" stroke-width="1.5" stroke-dasharray="6,6" fill="none"/>
+    <path d="M 460,674 L 510,674" stroke="#ABBCCF" stroke-width="1.5" stroke-dasharray="6,6" fill="none"/>
+
+    <!-- 中區到右區 -->
+    <path d="M 1410,277 L 1460,277" stroke="#ABBCCF" stroke-width="2" fill="none"/>
+    <polygon points="1460,277 1450,272 1450,282" fill="#ABBCCF"/>
+
+    <path d="M 1410,382 L 1460,382" stroke="#ABBCCF" stroke-width="2" fill="none"/>
+    <polygon points="1460,382 1450,377 1450,387" fill="#ABBCCF"/>
+
+    <path d="M 1410,487 L 1460,487" stroke="#ABBCCF" stroke-width="2" fill="none"/>
+    <polygon points="1460,487 1450,482 1450,492" fill="#ABBCCF"/>
+
+    <path d="M 1410,620 L 1460,620" stroke="#DAA360" stroke-width="2.5" fill="none"/>
+    <polygon points="1460,620 1448,614 1448,626" fill="#DAA360"/>
+</svg>
