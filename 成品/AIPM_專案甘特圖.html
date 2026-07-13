@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>AIPM 專案落地時程甘特圖</title>
+<style>
+  :root{
+    --surface:#fcfcfb; --ink:#1a1a19; --ink-2:#52514e; --ink-3:#8a897f;
+    --grid:#e8e7e0; --today:#c43826;
+    --c1:#2a78d6; --c2:#1baf7a; --c3:#eda100; --c4:#4a3aa7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI","Microsoft JhengHei",sans-serif;background:var(--surface);color:var(--ink);padding:32px 40px}
+  h1{font-size:20px;font-weight:600;margin-bottom:4px}
+  .sub{font-size:12.5px;color:var(--ink-2);margin-bottom:20px}
+  .legend{display:flex;gap:18px;font-size:12px;color:var(--ink-2);margin-bottom:14px;flex-wrap:wrap}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .chip{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .gantt{position:relative;border-top:1px solid var(--grid)}
+  .row{display:grid;grid-template-columns:230px 1fr;align-items:center;min-height:44px;border-bottom:1px solid var(--grid)}
+  .rowlabel{font-size:13px;color:var(--ink);padding-right:14px;line-height:1.35}
+  .rowlabel small{display:block;color:var(--ink-3);font-size:11px}
+  .lane{position:relative;height:44px}
+  .bar{position:absolute;top:11px;height:22px;border-radius:4px;display:flex;align-items:center;
+       padding:0 8px;font-size:11.5px;color:#fff;white-space:nowrap;cursor:default}
+  .bar.small-label{color:var(--ink-2)}
+  .bar.small-label .inbar{position:absolute;left:calc(100% + 8px);color:var(--ink-2)}
+  .axis{display:grid;grid-template-columns:230px 1fr;font-size:11px;color:var(--ink-3)}
+  .ticks{position:relative;height:22px}
+  .tick{position:absolute;top:0;transform:translateX(-50%)}
+  .vgrid{position:absolute;top:0;bottom:0;width:1px;background:var(--grid)}
+  .todayline{position:absolute;top:0;bottom:0;width:2px;background:var(--today);opacity:.85}
+  .todaytag{position:absolute;top:2px;left:0;transform:translateX(6px);font-size:10.5px;color:var(--today);font-weight:600;white-space:nowrap}
+  .wrap{position:relative}
+  .tooltip{position:fixed;pointer-events:none;background:#1a1a19;color:#fff;font-size:12px;
+           padding:8px 10px;border-radius:6px;opacity:0;transition:opacity .1s;z-index:9;line-height:1.5}
+  table{border-collapse:collapse;font-size:12.5px;margin-top:26px;width:100%}
+  caption{text-align:left;font-size:12px;color:var(--ink-3);padding-bottom:6px}
+  th,td{border:1px solid var(--grid);padding:6px 10px;text-align:left}
+  th{background:#f4f3ee;font-weight:600;color:var(--ink-2)}
+</style>
+</head>
+<body data-palette="#2a78d6,#1baf7a,#eda100,#4a3aa7">
+<h1>智能專案經理 AIPM — 專案落地時程</h1>
+<div class="sub">資料來源:Planner「AIPM 測試專案」實際任務 + 多 Agent 架構規劃落地順序|產出 2026/07/13|甘特圖採本檔呈現(Planner basic 方案無時間表檢視;升級 Premium 會使自動化連接器失效)</div>
+<div class="legend">
+  <span><i class="chip" style="background:var(--c1)"></i>Phase 1 建置</span>
+  <span><i class="chip" style="background:var(--c2)"></i>並行前置</span>
+  <span><i class="chip" style="background:var(--c3)"></i>Phase 2 建置</span>
+  <span><i class="chip" style="background:var(--c4)"></i>Planner 實際任務</span>
+</div>
+<div class="wrap" id="chart"></div>
+<table id="tbl">
+  <caption>表格檢視(與甘特圖同資料)</caption>
+  <thead><tr><th>任務</th><th>類別</th><th>開始</th><th>結束</th><th>狀態</th></tr></thead>
+  <tbody></tbody>
+</table>
+<div class="tooltip" id="tip"></div>
+<script>
+const T0 = new Date('2026-07-13'), T1 = new Date('2026-08-17');
+const DAY = 86400000, SPAN = (T1 - T0) / DAY;
+const TODAY = new Date('2026-07-13');
+const tasks = [
+  {name:'會議記錄 Agent + 知識庫', sub:'第 1 週', cat:'Phase 1 建置', c:'--c1', s:'2026-07-13', e:'2026-07-19', st:'進行中(會議記錄已上線)'},
+  {name:'時程 Agent', sub:'第 2 週:排程 Flow+催辦+甘特', cat:'Phase 1 建置', c:'--c1', s:'2026-07-20', e:'2026-07-26', st:'未開始(通知工具已就緒)'},
+  {name:'KPI 執行層 + 週報 Agent', sub:'第 3 週', cat:'Phase 1 建置', c:'--c1', s:'2026-07-27', e:'2026-08-02', st:'未開始'},
+  {name:'Gateway 申請 + 查數邏輯移植', sub:'與 Phase 1 並行', cat:'並行前置', c:'--c2', s:'2026-07-13', e:'2026-08-02', st:'未開始'},
+  {name:'數據 Agent + KPI 業務層', sub:'Phase 2(基建到位後)', cat:'Phase 2 建置', c:'--c3', s:'2026-08-03', e:'2026-08-16', st:'未開始(知識庫版已可查電子市佔)'},
+  {name:'科會簡報資料準備並寄出', sub:'負責人:王瑀軒', cat:'Planner 實際任務', c:'--c4', s:'2026-07-13', e:'2026-07-13', st:'已開單(2026/07/13 16:30 到期)'},
+];
+const chart = document.getElementById('chart');
+const pct = d => ((new Date(d) - T0) / DAY) / SPAN * 100;
+// 週刻度
+let axis = '<div class="axis"><div></div><div class="ticks">';
+let grids = '';
+for (let d = new Date(T0); d <= T1; d = new Date(d.getTime() + 7 * DAY)) {
+  const p = pct(d);
+  axis += `<div class="tick" style="left:${p}%">${d.getMonth()+1}/${d.getDate()}</div>`;
+  grids += `<div class="vgrid" style="left:${p}%"></div>`;
+}
+axis += '</div></div>';
+let rows = '';
+tasks.forEach((t, i) => {
+  const l = pct(t.s), w = Math.max(((new Date(t.e) - new Date(t.s)) / DAY + 1) / SPAN * 100, 1.6);
+  const short = w < 14;
+  rows += `<div class="row"><div class="rowlabel">${t.name}<small>${t.sub}</small></div>
+    <div class="lane">${i===0?grids+`<div class="todayline" style="left:${pct(TODAY)}%"></div><div class="todaytag" style="left:${pct(TODAY)}%">今天 7/13</div>`:grids}
+    <div class="bar${short?' small-label':''}" data-i="${i}" style="left:${l}%;width:${w}%;background:var(${t.c})">
+      ${short?`<span class="inbar">${t.s.slice(5).replace('-','/')}</span>`:`${t.s.slice(5).replace('-','/')} – ${t.e.slice(5).replace('-','/')}`}
+    </div></div></div>`;
+});
+chart.innerHTML = rows + axis;
+// tooltip
+const tip = document.getElementById('tip');
+chart.addEventListener('mousemove', ev => {
+  const b = ev.target.closest('.bar');
+  if (!b) { tip.style.opacity = 0; return; }
+  const t = tasks[+b.dataset.i];
+  tip.innerHTML = `<b>${t.name}</b><br>${t.cat}<br>${t.s} ~ ${t.e}<br>${t.st}`;
+  tip.style.left = (ev.clientX + 14) + 'px'; tip.style.top = (ev.clientY + 14) + 'px';
+  tip.style.opacity = 1;
+});
+chart.addEventListener('mouseleave', () => tip.style.opacity = 0);
+// table view
+document.querySelector('#tbl tbody').innerHTML = tasks.map(t =>
+  `<tr><td>${t.name}</td><td>${t.cat}</td><td>${t.s}</td><td>${t.e}</td><td>${t.st}</td></tr>`).join('');
+</script>
+</body>
+</html>

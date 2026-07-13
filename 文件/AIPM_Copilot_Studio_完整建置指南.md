@@ -3,9 +3,17 @@
 > **2026/07/13 已實際建置**:主 Agent + 四大子 Agent 已在 SinoPac (default) 環境上線並發佈。
 > - 主 Agent:智能專案經理 AIPM(bot id `a6cea5f2-8d7e-f111-ab0f-70a8a503d6ba`,模型 Claude Sonnet 4.6)
 > - 子 Agent:會議記錄 Agent (Meeting)/時程 Agent (Schedule)/KPI Agent/數據 Agent (Data)——**名稱必須含唯一英文**,否則 ToolIdentifierConflict(詳見審查報告)
-> - 會議記錄 Agent 已掛 Planner「建立工作 V3」工具:Group=數媒經營部團隊(`0719a187-d638-4689-9e40-2b968d56ad92`)、Plan=AIPM 測試專案(`TBx46QA8mUupJHZtpb8RaskAEfNe`)、執行前先詢問=是、終端使用者認證
+> - 會議記錄 Agent 已掛 Planner「建立工作 V3」工具:Group=數媒經營部團隊(`0719a187-d638-4689-9e40-2b968d56ad92`)、Plan=AIPM 測試專案(`TBx46QA8mUupJHZtpb8RaskAEfNe`)、執行前先詢問=是、終端使用者認證;**輸入欄已補 Start Date Time / Due Date Time / Assigned User Ids(可填 email)**,開的單會帶日期與負責人,供時程/KPI 追蹤
 > - 數據 Agent 知識庫已上傳電子市佔真實數據(2025/01~2026/06 月報+2026 YTD),Web 搜尋已關
-> - 端對端已驗證:科會會議記錄 → 待辦抽取 → 雙層確認 → Planner 真實開單成功(截圖見 成品/)
+> - **時程 Agent** 已掛 Planner「列出工作」(Group/Plan 綁真實 GUID,唯讀)＋「更新工作 V2」(Task Id/Due Date/Percent Complete,執行前先詢問=是);Teams「張貼訊息」改為 **Post as=Flow bot + Post in=Chat with Flow bot + Recipient=email**(用 email 私訊特定人,不需對話 ID)。Outlook 寄信同備。
+> - **KPI Agent** 已掛 Planner「列出工作」(綁真實 GUID,唯讀);實測可自動讀 Planner 任務算完成率/逾期率/成員負載,標(參考),不需人工貼資料
+> - 端對端已驗證:①科會會議記錄→待辦→雙層確認→Planner 真實開單 ②Teams 私訊 how.kuo@sinopac.com 已送達 ③KPI 自動讀 Planner 算 KPI(截圖見 成品/)
+>
+> **踩坑補充(給後續維護)**:
+> - Planner「列出工作/建立工作」的 Group Id、Plan Id **必須從下拉選方案名(解析成 GUID)**,直接打字會 HTTP 404 找不到項目。
+> - Teams「張貼訊息」預設是「群組聊天」模式會要一串對話 ID(GUID);要私訊特定人改用「Chat with Flow bot」+ 收件人 **@sinopac.com** email(gmail 收不到,Teams 限租戶內)。
+> - 官方 Planner「列出工作」在工具搜尋的扁平結果被藏起來,要用「連接器」篩選 → 點「Planner 連接器」卡 → 才看得到完整動作清單。
+> - Planner 任務要能被逾期掃描/甘特圖用,建單時要帶「開始日+到期日」。
 
 > 依據競賽提案 `outputs/智能專案經理AIPM_競賽提案.pptx` 的專案架構整併。
 > 一份文件，從零把「主 Agent＋四大子 Agent」建到可在 Copilot Studio 實際運作。
