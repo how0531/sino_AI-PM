@@ -1,28 +1,27 @@
-# 全方位企業增效 Agent 規劃專案
+# 智能專案經理 AIPM — 競賽提案專案
 
-本專案旨在為 AI 競賽提供一份完整的「AI PM 專案經理特助：全方位企業增效 Agent」規劃書，並包含網頁版的互動展示平台，用以呈現 5 大 Agent 的核心功能與技術架構。
+以 Microsoft Copilot Studio 打造「主 Agent＋四大子 Agent（會議記錄／時程／數據／KPI）」的 AI 專案經理團隊，共用 Planner＋SharePoint 資料層協作，PM 只需按確認。
 
 ## 檔案對照表
 
-### 競賽提案（2026/07/10 多 Agent 版定稿）
+### 競賽提案（四核心 Agent 版定稿）
 
-* AI競賽.pptx - 競賽提案簡報（已填：四核心 Agent＋協作閉環版；待補第 6 頁真實量化數字與第 7 頁 Copilot Studio 截圖）。
+* AI競賽.pptx - 競賽提案簡報定稿（待補第 6 頁真實量化數字與第 7 頁 Copilot Studio 截圖）。
+* outputs/智能專案經理AIPM_競賽提案.pptx - 競賽提案簡報（架構依據版）。
 * 文件/AIPM_多Agent架構規劃.md - 多 Agent 架構定稿（四核心＋跨 Agent 協作閉環＋落地順序＋待辦）。
 * 文件/Copilot_Studio_能力查證報告.md - 19 項能力逐一查證（官方文件出處）＋簡報話術修正＋答辯 Q&A。
-* four_agents_detailed_flow_16_9.png（源檔：成品/四大Agent_對話決策流程圖_16_9.svg）- 簡報第 5 頁用四大 Agent 對話決策流程圖，含 5 條跨 Agent 協作連線。
-* aipm_architecture_4agents_16_9.png（源檔：成品/AIPM_四Agent_運作架構圖_16_9.svg）- 四 Agent 總架構圖（答辯/附錄備用）。
-
-### 早期規劃（五 Agent 舊版，留檔參考）
-
-* 文件/企業增效_Agent_規劃書.md - 完整的規劃書定稿，包含技術架構、資安權限控管與 5 大 Agent 詳細設計。
-* 文件/企業增效_Agent_可行性評估與建置指南簡報.md - 提供五大 Agent 的可行性評估報告、AI 競賽簡報大綱（內含 Mermaid 對話與系統流程圖）以及 Copilot Studio 與 Power Automate 逐步建置指南。
-* 成品/index.html - 網頁版互動展示平台主頁面，提供動態模擬與視覺展示。
-* 成品/企業增效_Agent_架構流程圖_16_9.svg - 專為簡報設計的 16:9 全方位 Agent 運作架構圖，字體大且清晰，排版已排除溢出。
-* 成品/會議記錄Agent_對話決策流程圖_16_9.svg - 專為簡報設計的 16:9 會議記錄 Agent 對話決策流程圖，採用中文與永豐金視覺規範，無文字溢出。
-* 成品/index.css - 展示平台之樣式表，嚴格遵循永豐金證券視覺色系規範。
-* 成品/index.js - 展示平台之互動邏輯，包含 5 大 Agent 的輸入模擬與輸出效果。
-* 文件/AI_PM_Agent可行性規劃.md - 五大 Agent 可行性總判（立即做 3、有條件 2、剔除 1）、風險修正、資料流架構與兩階段路線圖。
-* outputs/AI_PM_Agent可行性與建置簡報_可編輯premium.pptx - 可編輯簡報定稿（14 頁，永豐金視覺規範，含資料流流程圖）。
-* outputs/AI_PM_Agent可行性與建置簡報_premium.pdf - 簡報唯讀分發版。
+* 文件/AIPM_Copilot_Studio_完整建置指南.md - 從零到可運作的完整建置步驟（主 Agent＋四大子 Agent、Topic YAML、Flow 設定、安全與成本）。
+* 文件/AIPM_建置計畫工程師審查報告.md - 建置計畫逐項查證（踩雷點／替代做法／上線前清單）＋實戰踩坑補充（ToolIdentifierConflict 等）。
+* outputs/AIPM_Copilot_Instructions.txt - 建 Agent 時貼入 Instructions 欄位的現成指令（亦可作第 7 頁佐證附件）。
 * outputs/poc_meeting_minutes.py - 會議記錄 Agent 本地 POC（規則版，含自我檢查，可當場 demo）。
-* 過程/ - 用於放置暫存或實驗檔案的目錄。
+
+### 圖檔（成品/）
+
+* four_agents_detailed_flow_16_9.png（源檔：四大Agent_對話決策流程圖_16_9.svg）- 簡報第 5 頁用四大 Agent 對話決策流程圖，含 5 條跨 Agent 協作連線。
+* aipm_architecture_4agents_16_9.png（源檔：AIPM_四Agent_運作架構圖_16_9.svg）- 四 Agent 總架構圖（答辯／附錄備用）。
+* four_agents_core_flow_16_9.png（源檔：四大Agent_核心流程圖_簡化版_16_9.svg）- 核心流程簡化版。
+* 既有真實截圖_請假申請Agent.png - 既有 Copilot Studio 實作截圖佐證。
+
+### 封存（過程/封存/）
+
+早期「五 Agent 舊版」的規劃書、可行性簡報、網頁展示平台與舊流程圖，已全數封存於 過程/封存/（維持原 outputs／成品／文件 層級），僅留檔參考、不再維護。
