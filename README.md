@@ -12,6 +12,8 @@
 * 文件/Copilot_Studio_能力查證報告.md - 19 項能力逐一查證（官方文件出處）＋簡報話術修正＋答辯 Q&A。
 * 文件/AIPM_Copilot_Studio_完整建置指南.md - 從零到可運作的完整建置步驟（主 Agent＋四大子 Agent、Topic YAML、Flow 設定、安全與成本）。
 * 文件/AIPM_建置計畫工程師審查報告.md - 建置計畫逐項查證（踩雷點／替代做法／上線前清單）＋實戰踩坑補充（ToolIdentifierConflict 等）。
+* 文件/AIPM_時程排程Flow_建置藍圖.md - Power Automate 每日 17:00 掃逾期→私訊 PM 的精確建置步驟（含篩選運算式）。
+* 素材/KPI目標.xlsx - KPI 目標值底稿（完成率/逾期率/負載/里程碑），供 KPI Agent 算缺口。
 * outputs/AIPM_Copilot_Instructions.txt - 建 Agent 時貼入 Instructions 欄位的現成指令（亦可作第 7 頁佐證附件）。
 * outputs/poc_meeting_minutes.py - 會議記錄 Agent 本地 POC（規則版，含自我檢查，可當場 demo）。
 
